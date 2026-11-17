@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="intro">
+  <h1>{{ site.Title }}</h1>
+  <p class="lead">{{ site.Params.description }}</p>
+</section>
+
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<ul class="post-list">
+  {{ range $posts.ByDate.Reverse }}
+  <li>
+    <a class="post-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      {{ with .Params.tags }} · {{ delimit . " · " }}{{ end }}
+    </div>
+    {{ with .Summary }}
+    <p class="summary">{{ . | plainify | truncate 140 }}</p>
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

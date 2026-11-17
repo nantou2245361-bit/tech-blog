@@ -1,0 +1,31 @@
+baseURL: "https://nantou2245361-bit.github.io/blog/"
+title: "阿翔的手記"
+enableRobotsTXT: true
+enableGitInfo: false
+
+defaultContentLanguage: zh-hant
+
+languages:
+  zh-hant:
+    locale: "zh-Hant"
+    label: "繁體中文"
+    title: "阿翔的手記"
+    weight: 1
+
+pagination:
+  pagerSize: 10
+
+taxonomies:
+  tag: tags
+
+params:
+  author: "阿翔"
+  description: "工作、技術與生活的隨筆。"
+  since: 2026
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: github

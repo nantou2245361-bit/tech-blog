@@ -1,0 +1,14 @@
+# build output
+public/
+resources/_gen/
+
+# hugo lock/temp
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/

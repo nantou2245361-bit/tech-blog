@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ with .OutputFormats.Get "rss" }}<link rel="alternate" href="{{ .Permalink }}" type="application/rss+xml" title="{{ site.Title }}">{{ end }}
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ "" | relURL }}">{{ site.Title }}</a>
+    <nav>
+      <a href="{{ "posts/" | relURL }}">文章</a>
+      <a href="{{ "tags/" | relURL }}">標籤</a>
+      <a href="{{ "index.xml" | relURL }}">RSS</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ now.Year }} {{ site.Params.author }} · 由 <a href="https://gohugo.io/">Hugo</a> 與 GitHub Pages 驅動</p>
+  </footer>
+</body>
+</html>
