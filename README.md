@@ -1,8 +1,9 @@
-# blog
+# tech-blog
 
 阿翔的個人部落格 — Hugo 靜態站，部署在 GitHub Pages。
 
-- 網址：https://nantou2245361-bit.github.io/blog/
+- Repo：https://github.com/nantou2245361-bit/tech-blog
+- 網址：https://nantou2245361-bit.github.io/tech-blog/
 - 文章目錄：`content/posts/`
 - 版型：`layouts/`（自製，無外部主題依賴）
 - 部署：push 到 `main` → GitHub Actions 建置 → Pages 發布
